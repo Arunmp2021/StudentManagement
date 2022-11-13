@@ -28,7 +28,7 @@
             <th>Reporting Teacher</th>
             <th width="280px">Action</th>
         </tr>
-        @foreach ($students as $student)
+        @forelse ($students as $student)
             <tr>
                 <td>{{ $loop->iteration }}</td>
                 <td>{{ $student->name??'' }}</td>
@@ -48,7 +48,9 @@
                     
                 </td>
             </tr>
-        @endforeach
+            @empty
+            <tr><td colspan="6" style="text-align: center">No Data Found!</td></tr>
+        @endforelse
 
     </table>
 @endsection

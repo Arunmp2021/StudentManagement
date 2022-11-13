@@ -32,7 +32,7 @@
             <th  width="280px">Action</th>
         </tr>
         
-        @foreach ($studentMarks as $key => $mark)
+        @forelse ($studentMarks as $key => $mark)
         @php 
             $total=($mark->maths_mark??0)+($mark->science_mark??0)+($mark->history_mark??0);
         @endphp
@@ -55,6 +55,8 @@
                     </form>
                 </td>
             </tr>
-        @endforeach
+            @empty
+            <tr><td colspan="9" style="text-align: center">No Data Found!</td></tr>
+        @endforelse
     </table>
 @endsection
