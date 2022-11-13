@@ -5,7 +5,7 @@ Clone the Repo:
 2. cd StudentManagement
 3. composer install
 4. cp .env.example .env
-5. Set up .env file
+5. Set up .env file(db config)
 6. php artisan key:generate
 7. php artisan migrate
 8. php artisan db:seed Teacher
