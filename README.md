@@ -1,3 +1,5 @@
+Installation
+----------------------------
 Clone the Repo:
 > git clone
 > cd StudentManagement
