@@ -65,8 +65,10 @@ class StudentController extends Controller
     //delete student data//
     public function destroy($id)
     {
-        $student = Student::find($id)->delete();
-        $mark = StudentMark::where('student_id', $id)->delete();
+        $student = Student::find($id);
+        
+        $student->marks()->delete();
+        $student->delete();
 
         return redirect()->route('student.index')->with('success', 'Student deleted successfully');
     }
