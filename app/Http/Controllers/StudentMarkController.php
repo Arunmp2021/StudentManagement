@@ -69,7 +69,7 @@ class StudentMarkController extends Controller
    
     public function destroy($id)
     {
-        $student = StudentMark::where('id', $id)->delete();
+        $student = StudentMark::find($id)->delete();
         return redirect()->route('student-mark.index')->with('success', 'Student mark deleted successfully');
     }
 }
